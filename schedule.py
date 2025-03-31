@@ -1,33 +1,31 @@
 import datetime
 from buckets import Buckets
 from student import Student
-def available_times():
+import random
+import classes
+
     ## Eventually, times will be replaced by variable names given by csv (not available yet)
     # 
-    classes ={
-              "BReading": ["8am", "9:15", "10:30"],
-              "IReading": ["8am", "9:15", "10:30"],
-              "AReading": ["8am", "9:15", "10:30"],
-              "BMath": ["9:15", "10:30", "1:00"],
-              "IMath": ["9:15", "10:30", "1:00"],
-              "AMath": ["9:15", "10:30", "1:00"],
-              "BASL": ["10:30", "1:00", "2:15"],
-              "IASL": ["10:30", "1:00", "2:15"],
-              "AASL": ["10:30", "1:00", "2:15"],
-              "Presentations": ["1:00", "2:15","3:30"],
-              "Lunch" : ["11:45"],
-              "Mentoring": ["8am", "9:15am", "2:15"]
-              }
-    # using the above dictionary, create a new dict using time objects
-    available_times = {}
-    for key in classes:
-        for time in classes[key]:
-            available_times[datetime.datetime.strptime(time, "%I:%M%p")] = key
-
+    
+BReading = classes("BReading",["8am", "9:15", "10:30"],20)
+IReading = classes("IReading", ["8am", "9:15", "10:30"],20)
+AReading = classes( "AReading", ["8am", "9:15", "10:30"],20)
+BMath = classes(  "BMath", ["9:15", "10:30", "1:00"],20)
+IMath = classes (  "IMath", ["9:15", "10:30", "1:00"],20)
+AMath = classes( "AMath", ["9:15", "10:30", "1:00"],20)
+BASL = classes( "BASL",  ["10:30", "1:00", "2:15"],20)
+IASL = classes (  "IASL", ["10:30", "1:00", "2:15"],20)
+AASL = classes(  "AASL", ["10:30", "1:00", "2:15"],20)
+Presentations = classes(  "Presentations", ["1:00", "2:15","3:30"],20)
+Lunch = classes (  "Lunch" , ["11:45"],100000)
+Mentoring = classes(  "Mentoring", ["8am", "9:15am", "2:15"],20)
+    
 
 def assignment(student: Student):
     ## English
     if student.english == beginner:
+        index = random.randint(1,length(BReading.times))
+        if (BReading.times[index])
         NAN = 0
         ##choose one BReading time
         #class cannot be full
