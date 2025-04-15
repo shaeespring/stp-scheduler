@@ -1,4 +1,4 @@
-from typing import Dict, List, Tuple, Union, Student
+from typing import Dict, List, Tuple, Union
 
 class Student:
     '''CSV Format: 
@@ -26,8 +26,9 @@ class Student:
     def get_schedule(self):
         return self.schedule
     
-    def return_scores(students_to_score: List[Student]) -> List[Student]:
-        """
-        Returns a list of test scores for each student.
-        """
-        return [(student_to_score.english, student_to_score.math, student_to_score.asl) for student_to_score in students_to_score]
+    # ???
+    # def return_scores(self,students_to_score: List[Student]) -> List[Student]:
+    #     """
+    #     Returns a list of test scores for each student.
+    #     """
+    #     return [(student_to_score.english, student_to_score.math, student_to_score.asl) for student_to_score in students_to_score]
