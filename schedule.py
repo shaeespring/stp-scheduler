@@ -75,7 +75,6 @@ def assignment(student: Student):
 
     ##choose one presentation time
     ##choose one mentoring time
-    
     ##all students will have lunch at 11:45
 
 
