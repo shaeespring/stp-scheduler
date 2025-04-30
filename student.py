@@ -1,4 +1,5 @@
-from typing import Dict, List, Tuple, Union, Student
+from typing import Dict, List, Tuple, Union
+from section import Section
 
 class Student:
     '''CSV Format: 
@@ -17,17 +18,36 @@ class Student:
         self.asl = asl
         self.schedule = []
     
-    def add_class(self, course):
+    def add_class(self, course: Section):
+        """Adds a class to the student's schedule"""
+        # Check if the course is already in the schedule
+        for section in self.schedule:
+            if section == course:
+                return
         self.schedule.append(course)
     
-    def remove_class(self, course):
+    def remove_class(self, course: Section):
+        """Removes a class from the student's schedule"""
+        # Check if the course is in the schedule
+        for section in self.schedule:
+            if section == course:
+                break
+            else:
+                return
         self.schedule.remove(course)
     
-    def get_schedule(self):
+    def get_schedule(self) -> List[Section]:
+        """Returns a list of sections that the student is enrolled in"""
         return self.schedule
     
-    def return_scores(students_to_score: List[Student]) -> List[Student]:
-        """
-        Returns a list of test scores for each student.
-        """
-        return [(student_to_score.english, student_to_score.math, student_to_score.asl) for student_to_score in students_to_score]
+    def __str__(self):
+        return f"{self.name}"
+    
+    def __eq__(self, other):
+        if isinstance(other, Student):
+            return self.name == other.name and self.english == other.english and self.math == other.math and self.asl == other.asl
+        return False
+    
+    def __repr__(self):
+        return self.__str__()
+    
