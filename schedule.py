@@ -24,58 +24,81 @@ def assignment(student: Student):
     ## English
     if student.english == "beginner":
         NAN=0
+    if student.english == "beginner":
+        NAN=0
         ##choose one BReading time
         # class cannot be full
+        # class cannot be full
         ##time cannot be taken on the students schedule
+    elif student.english == "intermediate":
     elif student.english == "intermediate":
         NAN = 1
         ##choose one IReading time
         # class cannot be full   I
+        # class cannot be full   I
         ##time cannot be taken on the students schedule
     elif student.english == "advanced":
         NAN = 0
+    elif student.english == "advanced":
+        NAN = 0
         ##choose one AReading time
+        # class cannot be full
         # class cannot be full
         ##time cannot be taken on the students schedule
 
         ## Math
     if student.math == "beginner":
+    if student.math == "beginner":
         NAN = 0
         ##choose one BMath time
         # class cannot be full
+        # class cannot be full
         ##time cannot be taken on the students schedule
+    elif student.math == "intermediate":
     elif student.math == "intermediate":
         NAN = 1
         ##choose one IMath time
         # class cannot be full
+        # class cannot be full
         ##time cannot be taken on the students schedule
+    elif student.math == "advanced":
     elif student.math == "advanced":
         NAN = 2
         ##choose one AMath time
+        # class cannot be full
         # class cannot be full
         ##time cannot be taken on the students schedule
 
     ## ASL
     if student.ASL == "beginner":
+    if student.ASL == "beginner":
         NAN = 0
         ##choose one BASL time
         # class cannot be full
+        # class cannot be full
         ##time cannot be taken on the students schedule
+    elif student.ASL == "intermediate":
     elif student.ASL == "intermediate":
         NAN = 1
         ##choose one IASL time
         # class cannot be full
+        # class cannot be full
         ##time cannot be taken on the students schedule
+    elif student.ASL == "advanced":
     elif student.ASL == "advanced":
         NAN = 2
         ##choose one AASL time
+        # class cannot be full
         # class cannot be full
         ##time cannot be taken on the students schedule
 
     ##choose one presentation time
     ##choose one mentoring time
     
+    
     ##all students will have lunch at 11:45
 
+
+## Students need ONE CLASS from EACH SUBJECT
 
 ## Students need ONE CLASS from EACH SUBJECT
