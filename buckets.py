@@ -1,5 +1,6 @@
 from student import Student
-from typing import List
+from typing import List, Dict
+import math
 
 class Buckets:
     """    
@@ -23,9 +24,11 @@ class Buckets:
     intermediateASL: list = []
     advancedASL: list = []
     
+    size_dict = {}
+    bucket_dict = {}
+    count_dict = {}
     
-    def sortcourses(self, students: List[Student]) -> None:
-        
+    def sort_courses(self, students: List[Student]) -> None:
         for student in students:    
             # Put into proper English bucket
             if student.english <= 3:
@@ -50,6 +53,29 @@ class Buckets:
                 self.advancedASL.append(student)
             else:
                 self.intermediateASL.append(student)
+
+        self.bucket_dict = {
+            "beginningEnglish": self.beginningEnglish,
+            "intermediateEnglish": self.intermediateEnglish,
+            "advancedEnglish": self.advancedEnglish,
+            "beginningMath": self.beginningMath,
+            "intermediateMath": self.intermediateMath,
+            "advancedMath": self.advancedMath,
+            "beginningASL": self.beginningASL,
+            "intermediateASL": self.intermediateASL,
+            "advancedASL": self.advancedASL
+        }
+        self.size_dict = {
+            "beginningEnglish": len(self.beginningEnglish),
+            "intermediateEnglish": len(self.intermediateEnglish),
+            "advancedEnglish": len(self.advancedEnglish),
+            "beginningMath": len(self.beginningMath),
+            "intermediateMath": len(self.intermediateMath),
+            "advancedMath": len(self.advancedMath),
+            "beginningASL": len(self.beginningASL),
+            "intermediateASL": len(self.intermediateASL),
+            "advancedASL": len(self.advancedASL)
+        }
     
     def get_buckets(self) -> List[List[Student]]:
         return [
@@ -76,6 +102,25 @@ class Buckets:
             len(self.intermediateASL),
             len(self.advancedASL)
         ]
+    
+    def set_class_count(self, class_limit = 7) -> None:
+        """
+        Returns a list of tuples containing the course name and the number of sections.
+        """
+        for key, size in self.size_dict.items():
+            if size == 0:
+                self.count_dict[key] = 0
+            else:
+                self.count_dict[key] = math.ceil(size / class_limit)
+    
+    def get_class_count(self) -> Dict:
+        return self.count_dict
+    
+    def get_bucket_dict(self) -> Dict:
+        return self.bucket_dict
+    
+    def get_size_dict(self) -> Dict:
+        return self.size_dict
     
     def __str__(self) -> str:
         sizes = self.get_bucket_sizes()

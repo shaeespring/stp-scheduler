@@ -1,11 +1,16 @@
+from typing import Tuple
+from time_block import TimeBlock
+from teacher import Teacher
+
+
 class Section:
     """ 
     Creates a section of a class that students will take
     Name: Name of the Class, could be seperated into 'name, difficulty'
-    Time: Available times of the class
+    Time: Time block of the class
     Capacity: How many students can take the class
     """
-    def __init__(self, subject, time, capacity, level, teacher):
+    def __init__(self, subject: str, time: TimeBlock, capacity: int, level: int, teacher: Teacher):
         self.__subject = subject
         self.__time = time
         self.__cap = capacity
@@ -49,5 +54,11 @@ class Section:
         if isinstance(other, Section):
             return self.__subject == other.__subject and self.__time == other.__time and self.__level == other.__level and self.__teacher == other.__teacher
         return False
+    
+    def __str__(self):
+        return f"Section({self.__subject}, {self.__time}, {self.__cap}, {self.__level}, {self.__teacher})"
+    
+    def __repr__(self):
+        return self.__str__()
         
     

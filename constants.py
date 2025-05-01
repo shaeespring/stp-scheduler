@@ -1,3 +1,13 @@
-BEGGINER = 0
+from time_block import TimeBlock
+from datetime import time
+BEGINNER = 0
 INTERMEDIATE = 1
-ADAVANCED = 2
+ADVANCED = 2
+CLASS_LIMIT = 7
+BLOCK_ONE = TimeBlock(time(8, 0), time(9, 0))
+BLOCK_TWO = TimeBlock(time(9, 15), time(10, 15))
+BLOCK_THREE = TimeBlock(time(10, 45), time(11, 45))
+LUNCH_TIME = TimeBlock(time(11, 45), time(12, 45))
+BLOCK_FOUR = TimeBlock(time(12, 45), time(1, 45))
+BLOCK_FIVE = TimeBlock(time(2, 0), time(3, 0))
+BLOCK_SIX = TimeBlock(time(3, 30), time(4, 30))
