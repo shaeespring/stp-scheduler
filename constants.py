@@ -11,3 +11,10 @@ LUNCH_TIME = TimeBlock(time(11, 45), time(12, 45))
 BLOCK_FOUR = TimeBlock(time(12, 45), time(1, 45))
 BLOCK_FIVE = TimeBlock(time(2, 0), time(3, 0))
 BLOCK_SIX = TimeBlock(time(3, 30), time(4, 30))
+LEVEL_DICT = {
+    BEGINNER: "Beginner",
+    INTERMEDIATE: "Intermediate",
+    ADVANCED: "Advanced"
+}
+
+TIME_BLOCKS = [BLOCK_ONE, BLOCK_TWO, BLOCK_THREE, BLOCK_FOUR, BLOCK_FIVE, BLOCK_SIX]
