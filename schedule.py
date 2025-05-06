@@ -1,8 +1,7 @@
 import datetime
 from buckets import Buckets
 from student import Student
-import random
-import classes
+
 
 ## Eventually, times will be replaced by variable names given by csv (not available yet)
 #
@@ -37,6 +36,7 @@ def assignment(student: Student):
         NAN = 0
         ##choose one AReading time
         # class cannot be full
+        # class cannot be full
         ##time cannot be taken on the students schedule
 
         ## Math
@@ -61,21 +61,27 @@ def assignment(student: Student):
         NAN = 0
         ##choose one BASL time
         # class cannot be full
+        # class cannot be full
         ##time cannot be taken on the students schedule
     elif student.ASL == "intermediate":
         NAN = 1
         ##choose one IASL time
+        # class cannot be full
         # class cannot be full
         ##time cannot be taken on the students schedule
     elif student.ASL == "advanced":
         NAN = 2
         ##choose one AASL time
         # class cannot be full
+        # class cannot be full
         ##time cannot be taken on the students schedule
 
     ##choose one presentation time
     ##choose one mentoring time
+    
     ##all students will have lunch at 11:45
 
+
+## Students need ONE CLASS from EACH SUBJECT
 
 ## Students need ONE CLASS from EACH SUBJECT
