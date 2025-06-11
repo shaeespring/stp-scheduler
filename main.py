@@ -412,15 +412,6 @@ def main():
     print("Assigning teachers to sections...")
     assign_teachers_to_sections(all_sections, instructors)
     
-    # Assign times to sections
-    print("Assigning times to sections...")
-    assign_times_to_sections(all_sections, TIME_BLOCKS)
-
-    # Print the sections with assigned teachers and times
-    print("Sections with assigned teachers and times:")
-    for section in all_sections:
-        print(section)
-
     # Assign students to sections
     print("Assigning students to sections...")
     overflow_students = assign_students_to_sections(students, all_sections)
@@ -432,6 +423,15 @@ def main():
     print("\nOverflow students:")
     for student in overflow_students:
         print(student)
+    # Assign times to sections
+    print("Assigning times to sections...")
+    assign_times_to_sections(all_sections, TIME_BLOCKS)
+
+    # Print the sections with assigned teachers and times
+    print("Sections with assigned teachers and times:")
+    for section in all_sections:
+        print(section)
+
 
     # Write student schedules to CSV
     with open('data/student_schedules.csv', 'w') as file:
